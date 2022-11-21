@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.homescreen.fragments.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/discoverTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/discover"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16mdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/userProfileImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/userProfileImg" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileImg"
+                android:layout_width="@dimen/_30mdp"
+                android:layout_height="@dimen/_30mdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/default_profile_pic"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1mdp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userProfileImg" />
+
+            <HorizontalScrollView
+                android:id="@+id/storyScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_height="wrap_content">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/userPostImg"
+                            android:layout_width="@dimen/_130mdp"
+                            android:layout_height="@dimen/_85mdp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/default_story_pic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:riv_border_color="#333333"
+                            app:riv_border_width="2dip"
+                            app:riv_corner_radius="10dip"
+                            app:riv_mutate_background="true"
+                            app:riv_tile_mode="repeat" />
+
+                        <View
+                            android:id="@+id/storyShadeView"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@drawable/drawable_black_shade"
+                            app:layout_constraintBottom_toBottomOf="@+id/userPostImg"
+                            app:layout_constraintEnd_toEndOf="@id/userPostImg"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/userPostImg"
+                            app:layout_constraintTop_toTopOf="@+id/userPostImg"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <View
+                            android:id="@+id/addBackgroundView"
+                            android:layout_width="@dimen/_16mdp"
+                            android:layout_height="@dimen/_16mdp"
+                            android:background="@drawable/drawable_circle"
+                            app:layout_constraintBottom_toBottomOf="@+id/addImg"
+                            app:layout_constraintEnd_toEndOf="@+id/addImg"
+                            app:layout_constraintStart_toStartOf="@+id/addImg"
+                            app:layout_constraintTop_toTopOf="@+id/addImg" />
+
+                        <ImageView
+                            android:id="@+id/addImg"
+                            android:layout_width="@dimen/_24mdp"
+                            android:layout_height="@dimen/_24mdp"
+                            android:src="@drawable/ic_baseline_add_circle_24"
+                            app:layout_constraintBottom_toBottomOf="@+id/userPostImg"
+                            app:layout_constraintEnd_toEndOf="@+id/userPostImg"
+                            app:layout_constraintStart_toStartOf="@+id/userPostImg"
+                            app:layout_constraintTop_toTopOf="@+id/userPostImg"
+                            app:layout_constraintVertical_bias="0.45" />
+
+                        <TextView
+                            android:id="@+id/createStoryTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_a_story"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/_12mdp"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/addImg" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/storyRv"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_story"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </HorizontalScrollView>
+            <View
+                android:id="@+id/lineView2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1mdp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/storyScrollView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postRv"
+                android:layout_width="0dp"
+                android:nestedScrollingEnabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                tools:listitem="@layout/item_post"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineView2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

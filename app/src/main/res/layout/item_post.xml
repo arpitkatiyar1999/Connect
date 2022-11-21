@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfileImg"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/default_profile_pic"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/userProfileImg"
+        app:layout_constraintTop_toTopOf="@+id/userProfileImg"
+        tools:text="Arpit Katiyar" />
+
+    <TextView
+        android:id="@+id/userAboutTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userProfileImg"
+        app:layout_constraintStart_toEndOf="@+id/userProfileImg"
+        app:layout_constraintTop_toBottomOf="@+id/nameTxt"
+        tools:text="Learner" />
+
+    <ImageView
+        android:id="@+id/moreImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userProfileImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/userProfileImg"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/userPostImg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150mdp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_story_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfileImg"
+        app:riv_corner_radius="10dip"
+        app:riv_mutate_background="true" />
+
+    <TextView
+        android:id="@+id/likeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_like"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userPostImg"
+        tools:text="700000" />
+
+    <TextView
+        android:id="@+id/commentTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_comment"
+        app:layout_constraintStart_toEndOf="@id/likeTxt"
+        app:layout_constraintTop_toBottomOf="@id/userPostImg"
+        tools:text="555" />
+
+    <TextView
+        android:id="@+id/shareTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_share"
+        app:layout_constraintStart_toEndOf="@id/commentTxt"
+        app:layout_constraintTop_toBottomOf="@id/userPostImg"
+        tools:text="54" />
+
+    <TextView
+        android:id="@+id/saveTxt"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:drawableStartCompat="@drawable/ic_outline_bookmark_border_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userPostImg" />
+
+    <View
+        android:id="@+id/linePostView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1mdp"
+        android:layout_marginTop="16dp"
+        android:background="#66AAAAAA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shareTxt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

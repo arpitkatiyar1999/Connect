@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.homescreen.fragments.ProfileFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        diagonal:layout_constraintEnd_toEndOf="parent"
+        diagonal:layout_constraintStart_toStartOf="parent"
+        diagonal:layout_constraintTop_toTopOf="parent">
+
+        <com.github.florent37.diagonallayout.DiagonalLayout
+            android:id="@+id/diagonalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250mdp"
+            diagonal:diagonal_angle="10"
+            diagonal:diagonal_direction="left"
+            diagonal:diagonal_position="bottom">
+
+            <ImageView
+                android:id="@+id/coverPhotoImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_placeholder"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/greyTrans"
+                diagonal:layout_constraintStart_toStartOf="parent"
+                diagonal:layout_constraintTop_toTopOf="parent" />
+
+        </com.github.florent37.diagonallayout.DiagonalLayout>
+    </LinearLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userProfileImg"
+        android:layout_width="@dimen/_90mdp"
+        android:layout_height="@dimen/_90mdp"
+        android:src="@drawable/img_placeholder"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="4dp"
+        diagonal:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        diagonal:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        diagonal:layout_constraintStart_toStartOf="@+id/linearLayout"
+        diagonal:layout_constraintTop_toTopOf="@+id/linearLayout"
+        diagonal:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/userNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16mdp"
+        android:textStyle="bold"
+        diagonal:layout_constraintEnd_toEndOf="@+id/userProfileImg"
+        diagonal:layout_constraintStart_toStartOf="@+id/userProfileImg"
+        diagonal:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:text="Arpit Katiyar" />
+
+    <TextView
+        android:id="@+id/userProfessionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="@dimen/_12mdp"
+        diagonal:layout_constraintEnd_toEndOf="@+id/userProfileImg"
+        diagonal:layout_constraintStart_toStartOf="@+id/userProfileImg"
+        diagonal:layout_constraintTop_toBottomOf="@+id/userNameTv"
+        tools:text="Android Developer" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_circle"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        app:layout_constraintEnd_toStartOf="@+id/view7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfessionTv"></View>
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/drawable_circle"
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintEnd_toStartOf="@+id/view9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view8"
+        app:layout_constraintTop_toBottomOf="@+id/userProfessionTv"></View>
+
+    <View
+        android:id="@+id/view9"
+        android:layout_width="@dimen/_30mdp"
+        android:layout_height="@dimen/_30mdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_circle"
+        android:backgroundTint="@android:color/holo_green_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view7"
+        app:layout_constraintTop_toBottomOf="@+id/userProfessionTv"></View>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:layout_constraintBottom_toBottomOf="@+id/view9"
+        app:layout_constraintEnd_toEndOf="@+id/view9"
+        app:layout_constraintStart_toStartOf="@+id/view9"
+        app:layout_constraintTop_toTopOf="@+id/view9" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_person_24"
+        app:layout_constraintBottom_toBottomOf="@+id/view8"
+        app:layout_constraintEnd_toEndOf="@+id/view8"
+        app:layout_constraintStart_toStartOf="@+id/view8"
+        app:layout_constraintTop_toTopOf="@+id/view8" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_comment_24"
+        app:layout_constraintBottom_toBottomOf="@+id/view7"
+        app:layout_constraintEnd_toEndOf="@+id/view7"
+        app:layout_constraintStart_toStartOf="@+id/view7"
+        app:layout_constraintTop_toTopOf="@+id/view7" />
+
+    <ImageView
+        android:id="@+id/coverCameraImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/drawable_circular_bg"
+        android:padding="8dp"
+        android:src="@drawable/ic_outline_camera_alt_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/profileCameraImg"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/drawable_circular_bg"
+        android:backgroundTint="#66000000"
+        android:padding="4dp"
+        android:src="@drawable/ic_outline_camera_alt_24"
+        app:layout_constraintBottom_toBottomOf="@+id/userProfileImg"
+        app:layout_constraintEnd_toEndOf="@+id/userProfileImg"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="@+id/userProfileImg"
+        app:layout_constraintTop_toTopOf="@+id/userProfileImg"
+        app:layout_constraintVertical_bias="0.89" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Followers"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/numOfFollowersTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="7000"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#66AAAAAA"></View>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Friends"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="7000"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#66AAAAAA"></View>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Photos"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:text="7000"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mollis aliquam ut porttitor leo a diam sollicitudin tempor. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Etiam erat velit scelerisque in." />
+    <include android:id="@+id/progressBar"
+        android:visibility="gone"
+        layout="@layout/layout_progress_bar"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
