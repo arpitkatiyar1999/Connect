@@ -22,14 +22,13 @@ import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
 class ProfileFragment : Fragment() {
-    private var _binding: FragmentProfileBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentProfileBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var storage:FirebaseStorage
     private lateinit var database:FirebaseDatabase
     private var openGalleryFromWhere=0
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View{
-        _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+        binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         initAll()
         return binding.root
     }
@@ -89,7 +88,7 @@ class ProfileFragment : Fragment() {
             if(data!=null && data.data!=null)
             {
                 if(openGalleryFromWhere==1)
-                updateCoverPhoto(data)
+                    updateCoverPhoto(data)
                 if(openGalleryFromWhere==2)
                     updateProfilePhoto(data)
             }
@@ -160,11 +159,6 @@ class ProfileFragment : Fragment() {
             if(progressBar.root.visibility!=View.GONE)
                 progressBar.root.visibility=View.GONE
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding=null
     }
     private fun showSnackbar(text:String)
     {

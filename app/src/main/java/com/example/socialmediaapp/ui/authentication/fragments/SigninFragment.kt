@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.socialmediaapp.R
 import com.example.socialmediaapp.databinding.FragmentSigninBinding
@@ -18,11 +19,10 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class SigninFragment : Fragment() {
-    private var _binding: FragmentSigninBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentSigninBinding
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentSigninBinding.inflate(layoutInflater, container, false)
+        binding = FragmentSigninBinding.inflate(layoutInflater, container, false)
         initAll()
         return binding.root
     }
@@ -69,7 +69,7 @@ class SigninFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     hideProgressBar()
-                    showSnackbar("Logged in Successfully")
+                    Toast.makeText(requireContext(),"Logged in Successfully", Toast.LENGTH_SHORT).show()
                     (activity as AuthenticationActivity).startActivity(Intent(requireActivity(), MainActivity::class.java))
                     (activity as AuthenticationActivity).finish()
                 } else {
@@ -115,9 +115,9 @@ class SigninFragment : Fragment() {
     }
     private fun showSnackbar(text:String)
     {
-        Snackbar.make(binding.root, text,
-            Snackbar.LENGTH_SHORT).show()
-    } private fun showProgressBar() {
+        Snackbar.make(binding.root, text, Snackbar.LENGTH_SHORT).show()
+    }
+    private fun showProgressBar() {
         with(binding)
         {
             if(progressBar.root.visibility!=View.VISIBLE)
@@ -130,10 +130,5 @@ class SigninFragment : Fragment() {
             if(progressBar.root.visibility!=View.GONE)
                 progressBar.root.visibility=View.GONE
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding=null
     }
 }
