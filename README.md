@@ -16,6 +16,16 @@ A Social media app  with  features like chat,posts,friend requests,stories ,noti
 
 
 ## Screenshots
+<img src="https://user-images.githubusercontent.com/60139160/207604256-294c1594-249d-46b5-9d97-0cae3e6c98c4.jpg" alt="Login Screen" width="200" height="400"/>    <img src="https://user-images.githubusercontent.com/60139160/207606731-ec0d5e24-db44-426e-a508-0101b26b61ae.jpg" alt="Register Screen" width="200" height="400"/>      <img src="https://user-images.githubusercontent.com/60139160/207607343-171dc6ef-d706-433d-8796-728850588d7d.jpg" alt="Users Screen" width="200" height="400"/>         <img src="https://user-images.githubusercontent.com/60139160/207607791-109ce6b3-0472-4077-a982-19ef08b999f8.jpg" alt="Upoad Post Screen" width="200" height="400"/>
 
-![Login Screen](https://drive.google.com/file/d/15SWem8ap_xT03aAA60KhIvWf3vh018Dc/view?usp=share_link) 
-![Register Screen](https://drive.google.com/file/d/1w4Te4JzJVc14AFpku2LJZJeIhggnaK7c/view?usp=share_link)
+## Tech Stack
+
+- Firebase Authentication,Storage,Firestore.
+- Kotlin Language
+- MVVM Architecture
+- Picasso Library
+- Coroutine
+- Navigation Component
+- Live Data , View Model
+
+
